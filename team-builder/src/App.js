@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import MainForm from "./components/MainForm";
+import UserCard from "./components/UserCard";
 import "./App.css";
 
 function App() {
@@ -34,11 +35,7 @@ function App() {
         handleSubmit={handleSubmit}
       />
       {data.map(user => (
-        <div key={user.id}>
-          <p>{user.name}</p>
-          <p>{user.email}</p>
-          <p>{user.role}</p>
-        </div>
+        <UserCard key={user.id} user={user} />
       ))}
     </div>
   );
