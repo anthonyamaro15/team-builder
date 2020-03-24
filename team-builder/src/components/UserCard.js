@@ -4,7 +4,6 @@ import { FaEdit } from "react-icons/fa";
 const UserCard = ({ user, memberToEdit }) => {
   return (
     <div>
-      <h1>Team members</h1>
       <div className="card-container">
         <div>
           <p>Name: {user.name}</p>

@@ -29,6 +29,10 @@ function App() {
       role: users.role
     };
 
+    if (users.name === "" || users.email === "" || users.role === "") {
+      return alert("values cannot be empty");
+    }
+
     setData([...data, newUsers]);
     setUsers({ name: "", email: "", role: "" });
   };
@@ -53,6 +57,7 @@ function App() {
         users={users}
         handleSubmit={handleSubmit}
       />
+      <h1>Team members</h1>
       {data.map(user => (
         <UserCard
           key={user.id}
