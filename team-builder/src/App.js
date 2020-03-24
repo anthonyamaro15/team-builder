@@ -1,24 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import MainForm from "./components/MainForm";
+import "./App.css";
 
 function App() {
+  const [data, setData] = useState([]);
+  const [users, setUsers] = useState({ name: "", email: "", role: "" });
+
+  const handleChange = e => {
+    const values = { ...users, [e.target.name]: e.target.value };
+    setUsers(values);
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const newUsers = {
+      ...users,
+      id: uuidv4(),
+      name: users.name,
+      email: users.email,
+      role: users.role
+    };
+
+    setData([...data, newUsers]);
+    setUsers({ name: "", email: "", role: "" });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MainForm
+        handleChange={handleChange}
+        users={users}
+        handleSubmit={handleSubmit}
+      />
+      {data.map(user => (
+        <div key={user.id}>
+          <p>{user.name}</p>
+          <p>{user.email}</p>
+          <p>{user.role}</p>
+        </div>
+      ))}
     </div>
   );
 }
