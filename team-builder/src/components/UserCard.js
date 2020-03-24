@@ -1,8 +1,8 @@
 import React from "react";
 
-const UserCard = ({ user }) => {
+const UserCard = ({ user, memberToEdit }) => {
   return (
-    <div>
+    <div onClick={memberToEdit}>
       <p>{user.name}</p>
       <p>{user.email}</p>
       <p>{user.role}</p>
