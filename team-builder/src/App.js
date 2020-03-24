@@ -4,7 +4,9 @@ import MainForm from "./components/MainForm";
 import UserCard from "./components/UserCard";
 
 function App() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([
+    { name: "streing", email: "example.comn", role: "nobody", id: "aaaaalf" }
+  ]);
   const [users, setUsers] = useState({ name: "", email: "", role: "" });
   //   const [editing, setEditing] = useState(false);
 
@@ -45,7 +47,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="App">
       <MainForm
         handleChange={handleChange}
         users={users}

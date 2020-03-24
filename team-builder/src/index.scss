@@ -1,13 +1,84 @@
-body {
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: #f4f4f4;
+  color: #333;
+  font-family: "Open Sans", sans-serif;
+}
+
+.App {
+  width: 50%;
+  margin: 3rem auto 0;
+
+  h1 {
+    text-align: center;
+    margin: 2rem 0;
+    text-transform: capitalize;
+  }
+
+  form {
+    padding: 1rem;
+    width: 300px;
+    margin: 0 auto 2rem;
+
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      outline: none;
+      border-radius: 3px;
+      border: 1px solid rgb(206, 198, 198);
+      padding: 0.3rem;
+      font-size: 1.1rem;
+      color: grey;
+    }
+
+    button {
+      display: block;
+      width: 150px;
+      margin: 0 auto;
+      padding: 0.3rem 2rem;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      background: grey;
+      color: white;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+  }
+
+  .card-container {
+    width: 500px;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 13px 0px rgba(102, 99, 102, 0.85);
+    p {
+      margin: 0.3rem 0;
+      padding: 0.3rem 0;
+      font-size: 1.2rem;
+    }
+
+    .icon {
+      cursor: pointer;
+      padding: 0.1rem;
+      height: 2vh;
+      font-size: 1.3rem;
+    }
+  }
 }
