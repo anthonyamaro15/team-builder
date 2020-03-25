@@ -4,11 +4,9 @@ import MainForm from "./components/MainForm";
 import UserCard from "./components/UserCard";
 
 function App() {
-  const [data, setData] = useState([
-    { name: "streing", email: "example.comn", role: "nobody", id: "aaaaalf" }
-  ]);
+  const [data, setData] = useState([]);
   const [users, setUsers] = useState({ name: "", email: "", role: "" });
-  //   const [editing, setEditing] = useState(false);
+  const [isUser, setIsUser] = useState(false);
 
   useEffect(() => {
     console.log("user changing..");
@@ -35,6 +33,7 @@ function App() {
 
     setData([...data, newUsers]);
     setUsers({ name: "", email: "", role: "" });
+    setIsUser(true);
   };
 
   const memberToEdit = id => {
@@ -57,7 +56,7 @@ function App() {
         users={users}
         handleSubmit={handleSubmit}
       />
-      <h1>Team members</h1>
+      {isUser ? <h1>Team members</h1> : ""}
       {data.map(user => (
         <UserCard
           key={user.id}
